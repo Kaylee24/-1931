@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2879fc00b3a6710dc7ace402a830552630fa4026a5cb80c652d6ad1a45e77fd6
-size 816
+import React from "react";
+import { Link } from "react-router-dom";
+
+function MainPage() {
+  
+    return (
+        <>
+            <p>메인 페이지</p>
+            <ul>
+                <li><Link to="/game-list">게임 리스트 페이지</Link></li>
+                <li><Link to="/achievements">업적 페이지</Link></li>
+            </ul>
+        </>
+    )
+}
+
+export default MainPage;
