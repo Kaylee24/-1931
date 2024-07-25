@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd3ce63cf2f8e5bcaafe54efc8fbdccaef86aaba1495b80ec5e41b5d4e709ae0
-size 1704
+import React from "react";
+import GamePageHeader from "../components/GamePageComponents/GamePageHeader";
+import GamePageMain from "../components/GamePageComponents/GamePageMain";
+import GamePageFooter from "../components/GamePageComponents/GamePageFooter";
+import styles from "./GamePage.module.css"
+
+function GamePage() {
+
+    return (
+        <>
+            <GamePageHeader />
+            <GamePageMain />
+            <GamePageFooter />
+        </>
+    )
+}
+
+export default GamePage;
