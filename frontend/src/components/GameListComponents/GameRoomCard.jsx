@@ -1,14 +1,3 @@
-const GameRoomCard = () => {
-
-    return (
-        <div>
-            <div>
-                <p>방 제목</p>
-                <p>대장 동지 : 강진</p>
-            </div>
-            <p>7/8</p>
-        </div>
-    );
-};
-
-export default GameRoomCard
+version https://git-lfs.github.com/spec/v1
+oid sha256:dda14a64a85e4b05e581891112a5f3bcc2bad6c0e2fcfda3a2a430806c206d1d
+size 642
