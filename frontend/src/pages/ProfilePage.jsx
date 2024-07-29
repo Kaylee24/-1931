@@ -1,16 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
-function ProfilePage() {
-    return (
-        <>
-            <p>프로필 페이지</p>
-            <ul>
-                <li><Link to="/achievements">업적 페이지</Link></li>
-                <li><Link to="/profile">프로필 페이지</Link></li>
-            </ul>
-        </>
-    )
-}
-
-export default ProfilePage;
+version https://git-lfs.github.com/spec/v1
+oid sha256:41d3935b8b5990ef4861c54aa23e084079050abb1e9ef267b975f1afedb54ebe
+size 3005
