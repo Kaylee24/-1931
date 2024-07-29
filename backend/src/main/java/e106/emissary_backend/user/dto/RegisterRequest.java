@@ -1,17 +1,3 @@
-package e106.emissary_backend.user.dto;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class RegisterRequest {
-    private String nickname;
-    private String email;
-    private String emailVerify;
-    private String password;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:85dffc8bfa2aa4bea52bf79230af16caddaf6989aa299f7f7a17f35e5f688729
+size 523
