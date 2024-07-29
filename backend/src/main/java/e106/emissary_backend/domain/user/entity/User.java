@@ -1,22 +1,3 @@
-package e106.emissary_backend.domain.user.entity;
-
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-@Getter
-@Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name="users")
-public class User {
-
-    @Id @GeneratedValue
-    @Column(name = "user_id")
-    private long id;
-
-    private String nickname;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9d988019d1ada33b6d86b508bdf665d0b77e2f09be588423056ac6f804613b43
+size 1791
