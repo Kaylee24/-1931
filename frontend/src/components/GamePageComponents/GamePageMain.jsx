@@ -1,14 +1,3 @@
-import React from "react";
-import styles from "./GamePageMain.module.css"
-
-function GamePageMain() {
-    return (
-        <>
-            <div className={styles.moniters}>
-                <p>플레이어들의 모니터가 들어갈 자리</p>
-            </div>
-        </>
-    )
-}
-
-export default GamePageMain;
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd493786f533e859a692974076b402a22074a18fa64edb7f4076faf54ded3af0
+size 2354
