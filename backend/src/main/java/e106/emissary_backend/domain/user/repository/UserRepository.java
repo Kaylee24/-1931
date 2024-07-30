@@ -1,11 +1,3 @@
-package e106.emissary_backend.domain.user.repository;
-
-import e106.emissary_backend.domain.user.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
-
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
-    Optional<User> findByNickname(String nickname);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ce3aed9dd2faaff65243fc1779192aadcc6d4862563af5b17bd482e48bf8428d
+size 593
