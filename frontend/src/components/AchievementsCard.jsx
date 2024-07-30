@@ -1,17 +1,3 @@
-import React from "react";
-
-function AchievementsCard({achievementName, achievementDate, description}) {
-    const formattedDate = achievementDate.toDateString()
-
-    return(
-        <>
-            <div>
-                {achievementName}
-                {formattedDate}
-                {description}
-            </div>
-        </>
-    )
-}
-
-export default AchievementsCard;
+version https://git-lfs.github.com/spec/v1
+oid sha256:a75a4d56013b95fe680f2a2cbe8e87ec00deb6936e6469dfab221d5afe89926a
+size 718
