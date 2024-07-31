@@ -1,21 +1,3 @@
-package e106.emissary_backend.domain.game.service.timer.task;
-
-import e106.emissary_backend.domain.game.service.GameService;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-public class StartVoteTask implements GameTask {
-    private final GameService gameService;
-    private final Long gameId;
-
-    @Override
-    public void run() {
-        execute(gameId);
-    }
-
-    @Override
-    public void execute(Long gameId) {
-        //todo : vote 시작 로직 구현
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e4924f93f502d040650ca50ae3793c34f3af0d19b9e2cea1a5222eaeae40daf3
+size 592

@@ -1,11 +1,3 @@
-package e106.emissary_backend.domain.game.service.subscriber;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class DaySubscriber {
-    public void sendMessage(String message){
-
-        //Todo : 프론트로 webSocket을 통해 데이터 내리기
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1fc0c1f40e7fd456fc44bcbc7e2348912343b0d50e5b42844d19f2e9aee649f0
+size 1317
