@@ -1,15 +1,3 @@
-package e106.emissary_backend;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
-@EnableJpaAuditing
-@SpringBootApplication
-public class EmissaryBackendApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(EmissaryBackendApplication.class, args);
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:79c4031fa9d445fc2ce7617b95da60b7a69f7dce424ccdc3edcc018f16117b57
+size 551
