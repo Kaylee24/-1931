@@ -1,14 +1,3 @@
-package e106.emissary_backend.domain.security.repository;
-
-import e106.emissary_backend.domain.security.entity.Refresh;
-
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface RefreshRepository extends CrudRepository<Refresh, String> {
-
-    Boolean existsByRefresh(String refresh);
-
-    void deleteByRefresh(String refresh);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4f12fe0279a3b06e1ea60711ff06b4b3c497b3e80731670897dd112799bb25f0
+size 578
