@@ -1,17 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
-function AchievementsPage() {
-    return (
-        <>
-            <p>업적 페이지</p>
-            <ul>
-                <li><Link to="/achievements">업적 페이지</Link></li>
-                <li><Link to="/profile">프로필 페이지</Link></li>
-            </ul>
-
-        </>
-    )
-}
-
-export default AchievementsPage;
+version https://git-lfs.github.com/spec/v1
+oid sha256:d4992148364501ab8cec6789358007fe478472c26dfd8ce57261adbd6a077b41
+size 1968
