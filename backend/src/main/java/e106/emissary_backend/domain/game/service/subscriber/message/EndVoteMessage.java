@@ -1,17 +1,3 @@
-package e106.emissary_backend.domain.game.service.subscriber.message;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import java.util.HashMap;
-
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-public class EndVoteMessage {
-    private long gameId;
-    private HashMap<Long, Integer> voteMap;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c6b59af8480306765df0d27df1249e7e8f8f7f05c0bc7d6678ced6804fb41e5a
+size 1276
