@@ -1,22 +1,3 @@
-package e106.emissary_backend.domain.game.service.timer.task;
-
-import e106.emissary_backend.domain.game.service.GameService;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-public class EndVoteTask implements GameTask {
-    private final GameService service;
-    private final Long gameId;
-
-    @Override
-    public void run() {
-        execute(gameId);
-    }
-
-    @Override
-    public void execute(Long gameId) {
-        // todo : vote 종료 로직 구현
-
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6ceee21bf9f1d76b902595d05217651a331bc79fb4a1175aad8f0cf96c936cf2
+size 2497
