@@ -1,16 +1,3 @@
-import React from "react";
-import styles from "./RoomName.module.css"
-
-function RoomName() {
-
-    return (
-        <>
-            <div className={styles.containerStyle}>
-                <span className={styles.labelStyle}>방 이름</span>
-                <input className={styles.inputStyle} type="text" placeholder="방 이름을 입력해주세요."></input>
-            </div>
-        </>
-    )
-}
-
-export default RoomName;
+version https://git-lfs.github.com/spec/v1
+oid sha256:f371a3f5442d29da61a7e5ad79fbe96a0ba7f6be8798520b88b40eff547baf24
+size 622
