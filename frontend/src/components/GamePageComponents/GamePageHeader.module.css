@@ -1,33 +1,3 @@
-.container {
-    height: 7vh;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.right {
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.exit {
-    text-decoration: none;
-}
-
-.settings {
-    color: black;
-}
-
-.black {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 1000px;
-    background-color: black;
-    z-index: 50;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:033cacf631a86015c505cc1018863be2c055d256266056afbff2e63f61bb4547
+size 837
