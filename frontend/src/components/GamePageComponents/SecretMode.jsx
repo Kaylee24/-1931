@@ -1,15 +1,3 @@
-import React from "react";
-import styles from "./SecretMode.module.css"
-
-function SecretMode() {
-    return (
-        <>
-            <div className={styles.container}>
-                <span className={styles.labelStyle}>비공개</span>
-                <input className={styles.inputStyle} type="checkbox"></input>
-            </div>
-        </>
-    )
-}
-
-export default SecretMode;
+version https://git-lfs.github.com/spec/v1
+oid sha256:b203f5991a0985176e5030921536313011530712c357badc01243492d221ea57
+size 564
