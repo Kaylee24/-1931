@@ -1,14 +1,3 @@
-package e106.emissary_backend.domain.game.repository;
-
-
-import e106.emissary_backend.domain.game.entity.Game;
-import e106.emissary_backend.domain.game.model.GameDTO;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
-
-@Repository
-public interface RedisGameRepository extends CrudRepository<Game, Long> {
-    Optional<Game> findByGameId(Long gameDBId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:979ee37b52b7de6fe431969ac85834f83d23a3b93bc9423d9dac0a4a6845f32d
+size 518
