@@ -1,17 +1,3 @@
-package e106.emissary_backend.domain.game.service;
-
-import e106.emissary_backend.domain.game.repository.RedisGameRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.RedisKeyValueTemplate;
-import org.springframework.stereotype.Service;
-
-@Service
-@RequiredArgsConstructor
-public class VoteService {
-
-    private final RedisGameRepository redisGameRepository;
-    private final RedisKeyValueTemplate redisKeyValueTemplate;
-
-
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0e43770531c43ede47b70d19a5d4e1b15b4a98fe263e5611b3b8cf0c4f2f441a
+size 2977
