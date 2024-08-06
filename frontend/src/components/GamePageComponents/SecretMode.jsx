@@ -1,12 +1,3 @@
-import React from "react";
-
-function SecretMode() {
-    return (
-        <>
-            <p>비공개</p>
-            <input type="checkbox"></input>
-        </>
-    )
-}
-
-export default SecretMode;
+version https://git-lfs.github.com/spec/v1
+oid sha256:b203f5991a0985176e5030921536313011530712c357badc01243492d221ea57
+size 564
