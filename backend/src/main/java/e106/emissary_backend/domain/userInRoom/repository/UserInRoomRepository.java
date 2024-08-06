@@ -1,14 +1,3 @@
-package e106.emissary_backend.domain.userInRoom.repository;
-
-import e106.emissary_backend.domain.userInRoom.entity.UserInRoom;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
-
-public interface UserInRoomRepository extends JpaRepository<UserInRoom, UserInRoom.Pk> {
-    int countPeopleByRoom_RoomId(long roomId);
-
-    void deletePeopleByPk_UserIdAndRoom_RoomId(long roomId, long userId);
-
-    Optional<UserInRoom> findByPk_UserId(long userId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f6c1c8890e8d139b17c3ec4f816b47527fc2825d2d86dad67dcac50b2d77a87c
+size 629
