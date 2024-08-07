@@ -1,17 +1,3 @@
-package e106.emissary_backend.domain.room.dto;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-@Getter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class RoomListDto {
-    private String title;
-    private String ownerName;
-    private int nowPlayer;
-    private int maxPlayer;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ab2787b550cd8e5caa716c1900040cd447ad6a960ef77104ae5a5b5a7c378e49
+size 604
