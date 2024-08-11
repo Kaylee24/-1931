@@ -1,17 +1,3 @@
-.monitors {
-    max-width: 100%;
-    height: 70vh;
-    border: 1px solid white;
-    background-color: #12151D;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-}
-
-.timer {
-    color: white;
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:febc2d06e5511dd8b4457269a7dee2e5cf4a78d3416d9aac74a173da1c3de1a4
+size 693
