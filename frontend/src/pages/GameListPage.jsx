@@ -1,17 +1,3 @@
-import GLHeader from "../components/GameListComponents/GLHeader";
-import GLMain from "../components/GameListComponents/GLMain";
-import GLFooter from "../components/GameListComponents/GLFooter";
-
-function GameListPage({setViduToken}) {
-    return (
-        <div>
-            <GLHeader setViduToken={setViduToken}/>
-            <main>
-                <GLMain setViduToken={setViduToken}/>
-            </main>
-            <GLFooter />
-        </div>
-    );
-}
-
-export default GameListPage;
+version https://git-lfs.github.com/spec/v1
+oid sha256:75a649473c78b3f760d9833549d0a3bdd4658504d2503690c89b94f2c374b813
+size 1052
