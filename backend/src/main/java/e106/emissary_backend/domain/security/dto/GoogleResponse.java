@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eed8fc3bbf99c025b45aa7aebede784a02b98f7e6d85e7c87e0aa20138326309
-size 738
+//package e106.emissary_backend.domain.security.dto;
+//
+//import java.util.Map;
+//
+//public class GoogleResponse implements OAuth2Response{
+//
+//    private final Map<String, Object> attribute;
+//
+//    public GoogleResponse(Map<String, Object> attribute) {
+//
+//        this.attribute = attribute;
+//    }
+//
+//    @Override
+//    public String getProvider() {
+//        return "google";
+//    }
+//
+//    @Override
+//    public String getProviderId() {
+//        return attribute.get("sub").toString();
+//    }
+//
+//    @Override
+//    public String getEmail() {
+//        return attribute.get("email").toString();
+//    }
+//
+//    @Override
+//    public String getName() {
+//        return attribute.get("name").toString();
+//    }
+//}

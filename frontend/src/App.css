@@ -1,3 +1,82 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8805b58e95ee68b964c699fa993efd2d8d221daa60921afc9628c893a1122001
-size 1807
+/* App.css */
+
+/* index.css 또는 App.css에 추가 */
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+.east-sea-dokdo-regular {
+  font-family: "East Sea Dokdo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 김정철 명조체 폰트 가져오기 */
+@font-face {
+  font-family: 'KimjungchulMyungjo-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulMyungjo-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kimjungchul-bold {
+  font-family: 'KimjungchulMyungjo-Bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KimjungchulGothic-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulGothic-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kimjungchul-gothic-bold {
+  font-family: 'KimjungchulGothic-Bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KimjungchulGothic-Regular';
+  src: url('https://path-to-your-font/KimjungchulGothic-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kimjungchul-gothic-regular {
+  font-family: 'KimjungchulGothic-Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/* 모든 요소의 기본 여백과 패딩 제거 */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  background-color: #12151D;
+}
+
+/* 필요에 따라 추가적인 스타일 설정 */
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* 스크롤바가 생기는 경우에도 상단에 고정된 요소가 보이도록 설정 */
+body {
+  overflow-y: scroll;
+}

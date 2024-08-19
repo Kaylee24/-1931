@@ -1,3 +1,69 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7dde847742cb40774ab2ea935fb43e35c17175627a427babeb6d9734891d4bf7
-size 2293
+package e106.emissary_backend.domain.friends.service;
+
+import e106.emissary_backend.domain.friends.entity.Friends;
+import e106.emissary_backend.domain.friends.repository.FriendsRepository;
+import e106.emissary_backend.domain.user.entity.User;
+import e106.emissary_backend.domain.user.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class FriendsService {
+
+    private final FriendsRepository friendsRepository;
+    private final UserRepository userRepository;
+
+    public Friends sendFriendRequest(User user1, User user2) {
+        Friends friendship = Friends.builder()
+                .user1(user1)
+                .user2(user2)
+                .isAccepted("N") // 요청 대기 상태
+                .build();
+        return friendsRepository.save(friendship);
+    }
+
+    public void acceptFriendRequest(Friends friendship) {
+        friendship.acceptFriendRequest();
+        friendsRepository.save(friendship);
+    }
+
+    public void declineFriendRequest(Friends friendship) {
+        friendship.declineFriendRequest();
+        friendsRepository.save(friendship);
+    }
+
+    public Friends getFriendRequest(Long user1, Long user2) {
+        return friendsRepository.findFriendRequest(user1, user2);
+    }
+
+    public Friends getFriend(Long user1, Long user2) {
+        return friendsRepository.findFriend(user1, user2);
+    }
+
+    public List<Friends> getFriendsAsUser1(User user) {
+        return user.getFriendsAsUser1().stream()
+                .filter(friendship -> "Y".equals(friendship.getIsAccepted()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Friends> getFriendsAsUser2(User user) {
+        return user.getFriendsAsUser2().stream()
+                .filter(friendship -> "Y".equals(friendship.getIsAccepted()))
+                .collect(Collectors.toList());
+    }
+
+    public List<User> getReceiveFriends(Long user) {
+        List<Friends> friendship =  friendsRepository.receiveRequest(user);
+        List<User> users = new ArrayList<>();
+        for (Friends f : friendship) {
+            users.add(f.getUser1());
+        }
+        return users;
+    }
+
+}

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a74a00c3c78b8624efc04530f2e1ed7ab8aceac9256affce20ff0356d4e57bde
-size 683
+package e106.emissary_backend.global.common;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
+
+@EntityListeners(AuditingEntityListener.class)
+@MappedSuperclass
+@Getter
+public abstract class BaseTimeEntity {
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+}

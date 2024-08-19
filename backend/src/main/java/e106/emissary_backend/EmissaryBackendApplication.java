@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e628189771c35901ff768b86da936536a17211d276b407b50fe7789fe6ab727e
-size 530
+package e106.emissary_backend;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+
+@SpringBootApplication
+@EnableRedisRepositories
+public class EmissaryBackendApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EmissaryBackendApplication.class, args);
+    }
+
+}

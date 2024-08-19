@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:521dc6e5049be6d6b737a9c9dfbc749a0ccad9872ed099eda073c28943e9df28
-size 723
+package e106.emissary_backend.domain.user.controller;
+
+import e106.emissary_backend.domain.user.service.UserService;
+import e106.emissary_backend.domain.user.dto.MailRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequiredArgsConstructor
+public class MailController {
+
+    private final UserService mailService;
+
+    @ResponseBody
+    @PostMapping("/api/mail")
+    public String MailSend(@RequestBody MailRequest request){
+        return mailService.sendMail(request);
+    }
+
+}

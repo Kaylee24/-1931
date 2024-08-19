@@ -1,3 +1,69 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d6c075e3bf2e7026b8d76f9bfc1704b60bda4847e1f320fb22dc3ead798a9a6
-size 1706
+package e106.emissary_backend.domain.user.dto;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import e106.emissary_backend.domain.game.enumType.GameRole;
+import e106.emissary_backend.domain.user.entity.User;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class RoomDetailUserDto {
+    private long userId;
+
+    private String nickname;
+
+    @JsonProperty("owner")
+    private boolean owner;
+
+    @JsonProperty("me")
+    private boolean me;
+
+    @Builder.Default
+    private GameRole gameRole = GameRole.PERSON;
+
+    @JsonProperty("alive")
+    @Builder.Default
+    private boolean alive = true;
+
+    @JsonProperty("voted")
+    @Builder.Default
+    private boolean voted = false;
+
+    private long creationTime;
+
+    public static RoomDetailUserDto of(User user, long ownerId, long userId){
+        RoomDetailUserDto roomDetailUserDto = RoomDetailUserDto.builder()
+                .userId(user.getUserId())
+                .nickname(user.getNickname())
+                .owner(user.getUserId() == ownerId)
+                .build();
+
+        roomDetailUserDto.changeProperty(userId);
+
+        return roomDetailUserDto;
+    }
+
+    private void changeProperty(long userId) {
+        if(userId == this.userId) {
+            this.me = true;
+        }else{
+            this.me = false;
+        }
+    }
+
+    public void changeTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime
+                .atZone(ZoneId.systemDefault())
+                .toInstant()
+                .toEpochMilli();
+    }
+
+}

@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d199d4f3bf341d6f33cfb44911587836b21c888ec32e38bf2ffd508e29198c1a
-size 1192
+import React from "react";
+import styles from "./PoliceModal.module.css"
+
+const PoliceModal = function({ gameResponse, onChioce, myId }) {
+    const choicedPlayer = function(playerId, playerNickname, palyerRole) {
+        onChioce(playerId, playerNickname, palyerRole)
+    }
+    return (
+        <>
+            <div className={styles.modal}>
+                <div className={styles.container}>
+                    <p>누구를 조사하시겠습니까?</p>
+                    <div className={styles.btnContainer}>
+                        {Object.values(gameResponse.playerMap)
+                            .filter(player => player.alive)
+                            .map((player, index) => (
+                                <button
+                                    onClick={() => choicedPlayer(player.id, player.nickname, player.role)}
+                                    key={index}
+                                >
+                                    {player.nickname}
+                                </button>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default PoliceModal;
+

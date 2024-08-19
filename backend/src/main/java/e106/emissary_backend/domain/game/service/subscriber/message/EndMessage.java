@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:630a0b37c36368bdb18903465a04c7cab7d76ecd44d2e9e2a0648a281f0797d2
-size 659
+package e106.emissary_backend.domain.game.service.subscriber.message;
+
+import e106.emissary_backend.domain.game.enumType.CommonResult;
+import e106.emissary_backend.domain.game.enumType.GameRole;
+import e106.emissary_backend.domain.game.enumType.GameState;
+import e106.emissary_backend.domain.game.model.GameDTO;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+public class EndMessage {
+    private long gameId;
+    private GameState gameState;
+    private CommonResult result;
+    private GameDTO gameDto;
+    private GameRole winRole;
+}

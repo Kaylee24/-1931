@@ -1,3 +1,132 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2364c1e1439fa829402835206ef99fc5cb1bb742f63fafb7abffa58743a7cb51
-size 2299
+.container {
+    /* position: absolute; */
+    position: fixed;
+    /* position: absolute; */
+    top: 100px;
+    width: 100%;
+    height: 100px;
+    background-color: #12151D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 2000;
+    color: white;
+    padding: 35px 20px;
+    gap: 15px;
+}
+
+.container>div {
+    width: 30%;
+}
+
+.filterBoxContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    color: #F6F3E7;
+    width: 30%;
+}
+
+.filterBoxContainerLarge {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 2;
+    background-color: #292C33;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.filterBoxContainerMini {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    background-color: #292C33;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.filterContainer {
+    display: flex;
+    align-items: center;
+    justify-self: space-around;
+    width: auto;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.filterButtons {
+    /* width: 25px; */
+    height: 25px;
+    margin-left: 15px;
+}
+
+
+
+
+.CreateRoomButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* padding-right: 3%; */
+    /* width: 30% */
+}
+
+.CreateRoomButton {
+    background-color: #5D070A;
+    font-size: 22px;
+    padding: 2px 20px;
+    border: 2.5px #4C0A0E solid;
+    border-radius: 15px;
+}
+
+/* .searchBarContainer 
+    width: 34%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto; */
+/* 
+.searchBarContainer {
+    width: 40%;
+} */
+
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputUnderline {
+    display: flex;
+    border: solid #CEC8B0;
+    border-width: 0 0 1.5px 0;
+    width: 70%;
+    height: 58px;
+    margin-right: 15px;
+    background-color: #12151D;
+}
+
+.searchBarInput {
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+    height: 55px;
+    background-color: #12151D;
+    padding-left: 10px;
+    border: 0px;
+}
+
+.searchButton {
+    height: 54px;
+    width: auto;
+    cursor: pointer;
+}
+
+.searchBarInput::placeholder {
+    color: #CEC8B0;
+    font-size: 24px;
+}

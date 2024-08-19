@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae140a6354a49e313848031417f33c354259f5c72dd69941ad0c679562b55852
-size 565
+import React from "react";
+import styles from "./Turncoat.module.css"
+
+function Turncoat({ checked, onChange }) {
+    return (
+        <>
+            <div className={styles.container}>
+                <span className={styles.labelStyle}>변절자 여부</span>
+                <input 
+                    className={styles.inputStyle} 
+                    type="checkbox"
+                    checked={checked}
+                    onChange={(e) => onChange(e.target.checked)}
+                ></input>
+            </div>
+        </>
+    )
+}
+
+export default Turncoat;

@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81778120d42ce21819de36914b585802d44f72e0594d7026fada7fe2ca52a434
-size 638
+.slides1, .slides2 {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    overflow: auto;
+    /* margin-top : 150px; */
+    margin-left : 30px;
+    margin-right : 50px;
+    border-radius: 10px;
+}
+
+.slides1::-webkit-scrollbar, .slides2::-webkit-scrollbar {
+    height: 10px;
+}
+
+.slides1::-webkit-scrollbar-thumb, .slides2::-webkit-scrollbar-thumb {
+    background-color: rgba(239, 242, 247, 0.1);
+    border-radius: 10px;
+    border: 2px solid #1f2845;;
+  }
+
+.slides1::-webkit-scrollbar-track, .slides2::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #1f2845;
+}
+
+.slides1 {
+    margin-top : 100px;
+}
+

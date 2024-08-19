@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ec56ceeebc662fd6152b4d261546effaccd90d4b6591d733f9c7ebfaef111ea
-size 683
+package e106.emissary_backend.domain.room.service.subscriber.message;
+
+
+import e106.emissary_backend.domain.game.enumType.GameState;
+import e106.emissary_backend.domain.game.model.GameDTO;
+import e106.emissary_backend.domain.room.dto.RoomDetailDto;
+import e106.emissary_backend.domain.room.dto.RoomRequestDto;
+import e106.emissary_backend.domain.room.dto.RoomStompJoinUserDto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Builder
+public class EnterRoomMessage {
+    GameState gameState;
+    GameDTO gameDTO;
+    RoomDetailDto roomDetailDto;
+}

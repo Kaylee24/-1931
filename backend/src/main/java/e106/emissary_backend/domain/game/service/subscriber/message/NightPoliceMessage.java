@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d7e1f306fc8e30e0cad1cf71dac7e3ba563db964eee6cdc2a69f4bdef6d0521
-size 565
+package e106.emissary_backend.domain.game.service.subscriber.message;
+
+import e106.emissary_backend.domain.game.enumType.GameRole;
+import e106.emissary_backend.domain.game.enumType.GameState;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.util.HashMap;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+public class NightPoliceMessage {
+    private Long gameId;
+    private Long policeId;
+    private Long targetId;
+    private GameRole result;
+    private GameState gameState;
+}

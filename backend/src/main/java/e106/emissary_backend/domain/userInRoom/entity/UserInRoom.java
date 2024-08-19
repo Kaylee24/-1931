@@ -1,3 +1,55 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77436cfaa80ec42cd9d3e451f0a2ba7ba342642a783777f87178a3451a9444e8
-size 1300
+package e106.emissary_backend.domain.userInRoom.entity;
+
+import e106.emissary_backend.global.common.BaseTimeEntity;
+import e106.emissary_backend.domain.room.entity.Room;
+import e106.emissary_backend.domain.user.entity.User;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Entity
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "users_in_rooms")
+public class UserInRoom extends BaseTimeEntity {
+
+    @EmbeddedId
+    private Pk pk;
+
+    @MapsId("roomId")
+    @JoinColumn(name = "room_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Room room;
+
+    @MapsId("userId")
+    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+
+    @Column(name = "is_blocked")
+    private boolean isBlocked;
+
+    @Column(name=  "connect_time")
+    private LocalDateTime connectTime;
+
+    @Column(name = "vidu_token")
+    private String viduToken;
+
+    @Embeddable
+    @Getter
+    @EqualsAndHashCode
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Pk implements Serializable {
+        @Column(name = "room_id")
+        private Long roomId;
+
+        @Column(name = "user_id")
+        private Long userId;
+    }
+}

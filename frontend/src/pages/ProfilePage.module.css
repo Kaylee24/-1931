@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5d944f4e21b7c31da263517bd76401143b63059d43a2cb3c2c550dfa44dde98
-size 1079
+/* 최상위 div */
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #12151D;
+    color: white;
+    min-height: 100vh;
+}
+
+/* 2번째 div, 내용이 들어가는 box size 정의 */
+.containerMini {
+    width: 500px;
+}
+
+/* 입단 정보, 제목 div */
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+/* 조회 모드 정보 모음 div */
+.profileInfo {
+    text-align: start;
+    width: 100%;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.infoBox {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+}
+
+.editButton,
+.saveButton {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.editButton:hover,
+.saveButton:hover {
+    background-color: #ccc;
+}

@@ -1,3 +1,78 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba6c8fad678dce9478e3f9f879e768ab4959adf98104e4ac4df66573bcb8ca29
-size 3045
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.1'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'e106'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //openvidu
+    implementation 'io.openvidu:openvidu-java-client:2.30.0'
+    // Redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation group: 'org.redisson', name: 'redisson-spring-boot-starter', version: '3.34.1'
+    // Jwt
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+    // websocket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation group: 'org.webjars', name: 'sockjs-client', version: '1.5.1'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation 'io.projectreactor:reactor-test'
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // 추가한거
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // querydsl
+    // https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa
+    implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '3.3.2'
+    annotationProcessor 'com.querydsl:querydsl-apt:5.1.0:jakarta'
+    annotationProcessor 'jakarta.annotation:jakarta.annotation-api'
+    annotationProcessor 'jakarta.persistence:jakarta.persistence-api'
+
+    //json
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+    // LocalDateTime Serializer
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.17.2'
+    // swagger
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

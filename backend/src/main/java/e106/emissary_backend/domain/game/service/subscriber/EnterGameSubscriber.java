@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88435327eaab2c6b179a467afa7ede0499c8014d23780ac8b5923a1d41b8d34d
-size 1129
+package e106.emissary_backend.domain.game.service.subscriber;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import e106.emissary_backend.domain.game.service.subscriber.message.CommonMessage;
+import e106.emissary_backend.domain.game.service.subscriber.message.EnterGameMessage;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.stereotype.Service;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class EnterGameSubscriber {
+
+    private final ObjectMapper objectMapper;
+    private final SimpMessagingTemplate simpMessagingTemplate;
+
+    public void sendMessage(String message){
+        try {
+            EnterGameMessage enterGameMessage = objectMapper.readValue(message, EnterGameMessage.class);
+            long gameId = enterGameMessage.getGameId();
+
+            simpMessagingTemplate.convertAndSend("/sub/" + gameId, enterGameMessage);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

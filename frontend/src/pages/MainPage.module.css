@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67aacfb9e32d7c440274e045609208689de26e2a4651eecdf5949be9a2c556a7
-size 765
+.video {
+    width: 100%;
+    margin-top: 100px;
+    position: relative;
+}
+
+.button {
+    z-index: 1000;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 40px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.workingButton,
+.blockedButton {
+    z-index: 1001;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 50px;
+    border-radius: 100px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.workingButton {
+    background-color: #860000;
+}
+
+.blockedButton {
+    background-color: #565656;
+}

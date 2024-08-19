@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72753e6c66c4e810051ffce9f8947b49803b6f75d350346294d16169a0b670ad
-size 1007
+import React, {useState} from "react";
+import styles from "./GameChatInput.module.css"
+
+function GameChatInput({ onChatSubmit }) {
+    const [ enteredChat, setEnteredChat ] = useState('')
+
+    function enteredChatHandle(event) {
+        setEnteredChat(event.target.value)
+    }
+
+    function submitHandle(event) {
+        event.preventDefault()
+        onChatSubmit(enteredChat)
+        setEnteredChat('')
+    }
+
+    return (
+        <>
+            <form onSubmit={submitHandle}>
+                    <div className={styles.main}>
+                        <input 
+                            type="text" 
+                            value={enteredChat}
+                            onChange={enteredChatHandle}
+                            placeholder="채팅을 입력하세요."
+                            >
+                        </input>
+                        <button type="submit">보내기</button>
+                    </div>
+                </form>
+        </>
+    )
+
+}
+
+export default GameChatInput;

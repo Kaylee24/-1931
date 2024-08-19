@@ -1,3 +1,62 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b11243e5cb1cb74b78f3a809b5ce2f5b1f7f7a33966ecdaa7991b1baf14d499
-size 1542
+package e106.emissary_backend.domain.game.model;
+
+import e106.emissary_backend.domain.game.entity.Game;
+import e106.emissary_backend.domain.game.enumType.GameState;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class GameResponseDTO {
+
+    private Long gameId;
+
+    private String title;
+
+    private String ownerName;
+
+    private Player emissary;
+
+    private Player police;
+
+    private Player betrayer;
+
+    //    private List<Player> playerList;
+    // ID, player객체
+    private Map<Long, Player> playerMap;
+
+    private GameState gameState;
+
+    private int day;
+
+    private LocalDateTime timer;
+
+    private LocalDateTime startAt;
+
+    private LocalDateTime finishAt;
+
+    public static GameResponseDTO toDto(Game game) {
+        return GameResponseDTO.builder()
+                .gameId(game.getGameId())
+                .title(game.getTitle())
+                .ownerName(game.getOwnerName())
+                .emissary(game.getEmissary())
+                .police(game.getPolice())
+                .betrayer(game.getBetrayer())
+                .playerMap(game.getPlayerMap())
+                .gameState(game.getGameState())
+                .day(game.getDay())
+                .timer(game.getTimer())
+                .startAt(game.getStartAt())
+                .finishAt(game.getFinishAt())
+                .build();
+    }
+}

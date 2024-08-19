@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2503eab4ede9c9a9f66061659563f1c37c33500390e0a090506eae86d93a169
-size 728
+package e106.emissary_backend.global.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.Arrays;
+
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://127.0.0.1:5500")
+                .allowedHeaders("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowCredentials(true);
+    }
+
+}

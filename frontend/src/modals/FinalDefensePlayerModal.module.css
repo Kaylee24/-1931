@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d2566630c779a7949bbb439b2112623c8881e38154c31a85e85847222cae681
-size 613
+.modal {
+    font-family: 'KimjungchulMyungjo-Bold';
+    width: 890px;
+    height: 170px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container > p {
+    font-size: 25px;
+    padding-bottom : 30px;
+}
+
+.btnContainer {
+    color: black;
+    display: flex;
+    gap: 10px;
+}

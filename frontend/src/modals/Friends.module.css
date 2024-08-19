@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a917e00d2edb5166464dc88883fab3b4d96ad42124c288152c411d0b2749c656
-size 904
+.modal {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 630px;
+   height: 420px;
+   color: black;
+   background: #12151D;
+   border: 1px solid black;
+   border-radius: 20px;
+   color: white;
+   z-index: 100;
+}
+
+.container {
+    background: #12151D;
+    border: 3px solid #1E2940;
+    border-radius: 20px;
+    width: 630px;
+    height:100%;
+    max-width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    color: black;
+}
+
+.modalTitle {
+    margin-top: 30px;
+    padding-right: 30px;
+}
+
+
+.btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.btn:hover,
+.btn:active {
+    color: #80aeff;
+}
+
+.btn:click {
+    color: #80aeff;
+}
+/* .btn:focus, .btn:active {
+    outline: none;
+    border: none;
+}
+
+.btn:hover {
+    color: blue;
+} */

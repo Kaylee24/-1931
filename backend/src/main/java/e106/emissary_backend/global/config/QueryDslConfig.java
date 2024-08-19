@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47677fd10545709ae3e5d526dd6098405412a9c01c8e75b7999704459a28e9fe
-size 646
+package e106.emissary_backend.global.config;
+
+import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@Configuration
+@EnableJpaRepositories("e106.emissary_backend")
+public class QueryDslConfig {
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Bean
+    public JPAQueryFactory jpaQueryFactory() {
+        return new JPAQueryFactory(entityManager);
+    }
+}

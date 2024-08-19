@@ -1,3 +1,135 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e1a296b9cf653ececcd6df219223c29e126a1d1f5bb58e40d9ff0d12145db67
-size 4629
+package e106.emissary_backend.global.error;
+
+import e106.emissary_backend.global.error.exception.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionAdvice {
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notFoundUser(NotFoundUserException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notFoundRoom(NotFoundRoomException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notFoundGame(NotFoundGameException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notFoundUserInRoom(NotFoundUserInRoomException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> alreadyExistUser(AlreadyExistUserException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> alreadyStartRoom(AlreadyStartRoomException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notTimeToVote(NotTimeToVoteException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notAliveUser(NotAlivePlayerException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notTimeToNight(NotTimeToNightException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> noTitle(NoTitleException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> notEnoughRegister(NotEnoughRegisterFormException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+
+    @ExceptionHandler
+    public ResponseEntity<Object> alreadyUserInRoom(AlreadyUserInRoomException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> gameFull(GameFullException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> alreadyUseAppease(AlreadyUseAppeaseException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> alreadyRemoveUser(AlreadyRemoveUserException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> emissaryKill(EmissaryKillException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> alreadyDetectUser(AlreadyDetectUserException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> emissaryAppeaseEmissary(EmissaryAppeaseEmissaryException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> noUserInRoom(NoUserInRoomException e) {
+        ErrorCode errorCode = e.getErrorCode();
+        return handleExceptionInternal(errorCode);
+    }
+
+    private ResponseEntity<Object> handleExceptionInternal(ErrorCode errorCode) {
+        return ResponseEntity
+                .status(errorCode.getHttpStatus())
+                .body(ErrorDto.builder()
+                        .code(errorCode.name())
+                        .message(errorCode.getMessage())
+                        .build());
+    }
+}

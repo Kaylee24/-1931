@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b87d225f1d747f2afcc9222caee4eb9f8498345a367b49057494e288d33177cf
-size 534
+package e106.emissary_backend.domain.game.service.subscriber.message;
+
+import e106.emissary_backend.domain.game.enumType.GameState;
+import e106.emissary_backend.domain.game.model.GameDTO;
+import e106.emissary_backend.domain.game.service.GameService;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+public class DayMessage {
+    private GameState gameState;
+    private long gameId;
+    private GameDTO gameDTO;
+}

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9daef3303df9d3b73a46f091d26d439b61641a0e876d36557079e574a8b7212e
-size 629
+package e106.emissary_backend.domain.room.dto;
+
+import e106.emissary_backend.domain.room.entity.Room;
+import e106.emissary_backend.global.error.CommonErrorCode;
+import e106.emissary_backend.global.error.exception.NotFoundUserException;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class RoomListDto {
+    private String title;
+    private long roomId;
+    private String ownerName;
+    private int nowPlayer;
+    private int maxPlayer;
+    private String password;
+    private boolean isPrivate;
+}

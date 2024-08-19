@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e145b0aef13ff799d61e020eebee5c4ced3c531165f8e9020e42ac63d611cc8e
-size 943
+/* .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 20px;
+} */
+
+/* .container::after {
+    content: '';
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+} */
+
+/* .cardWrapper {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    max-width: calc(33.333% - 20px);
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+} */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 240px;
+    flex-grow: 1;
+    overflow-y: auto;
+    /* 많은 방이 있을 경우 스크롤 가능하도록 */
+}
+
+.cardWrapper {
+    border-radius: 8px;
+    padding: 0 20px;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.container::after {
+    content: '';
+    visibility: hidden;
+    grid-column: span 3;
+}

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e17cbc92d89b13fa6ad6b7e54b60df30ca1c34485b1395e851a9e10376b46263
-size 575
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import {BrowserRouter} from "react-router-dom";
+import {Provider} from 'react-redux';
+import store from "./store/store.jsx";
+import LoginStatus from "./LoginStatus.jsx";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <BrowserRouter>
+        {/*<React.StrictMode>*/}
+            <Provider store={store}>
+                <LoginStatus />
+                <App />
+            </Provider>
+        {/*</React.StrictMode>,*/}
+    </BrowserRouter>
+)

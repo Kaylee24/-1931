@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5eae62598b8830302764cdfb60103ed4ab35fb3ba4fae472515b5c272f331db5
-size 1200
+.modals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px; 
+    height: 430px;
+    perspective: 800px; 
+    z-index: 100;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.modals:hover .content {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: rgba(200, 200, 200, 1);
+    border: 3px solid #1E2940;
+    border-radius: 10px;
+    backface-visibility: hidden;
+
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.front img {
+    width: 230px;
+    height: 230px;
+}
+
+.back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.backContent {
+    font-family: 'KimjungchulMyungjo-Bold';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    white-space: pre-wrap;
+}

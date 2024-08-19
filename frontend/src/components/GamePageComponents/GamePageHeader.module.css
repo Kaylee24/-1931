@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:393e6a0b56625b7d3684c848f73086556a4b89be9fbd9534bcc0735e241f1ad4
-size 1120
+.container {
+    position: fixed;
+    top: 105px;
+    height: 50px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.roomTitle {
+    font-family: 'KimjungchulMyungjo-Bold';
+    font-size: 28px;
+    margin-left: 40px;
+    display: flex;
+    text-align: center;
+}
+
+.contentBox {
+    margin-right: 40px;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+}
+
+.exit {
+    font-size: 10px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.exitImage {
+    width: 30px;
+}
+
+.settings {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(200, 200, 200, 0.2);
+    border-radius: 15px;
+    margin-right: 20px;
+    padding: 10px 20px;
+
+}
+
+.black {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}

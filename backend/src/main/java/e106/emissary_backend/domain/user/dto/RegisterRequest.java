@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b2ff2f8c439e3a596f3db5d51fbff13de70c274e49ed37fc0f203f07b34d219
-size 617
+package e106.emissary_backend.domain.user.dto;
+
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.time.LocalDate;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class RegisterRequest {
+    private String nickname;
+    @Pattern(regexp = "^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$", message = "이메일 형식으로 작성해주세요")
+    private String email;
+    private String emailVerify;
+    private String gender;
+//    private LocalDate birth;
+    private String password;
+}

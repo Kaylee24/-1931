@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9202d7f7afbabf749c4178277b570470cc4ab246cbcbe95a748025567a535832
-size 807
+import styles from "./SearchBar.module.css"
+import SearchButton from "../assets/Buttons/SearchButton.png"
+const SearchBar = ({ placeholder }) => {
+
+    return (
+        <div>
+            <form className={styles.searchBarContainer}>
+                <div className={styles.inputUnderline}>
+                    <input
+                        required
+                        type="text"
+                        placeholder={placeholder}
+                        className={styles.searchBarInput}
+                    />
+                </div>
+
+                {/* <button className="w-[10%]">
+                    찾기
+                </button> */}
+                <img src={SearchButton} alt="SearchButton" className={styles.searchButton} />
+            </form>
+        </div>
+    )
+}
+
+export default SearchBar

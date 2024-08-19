@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e1079c03d2d092d5293c75ee3a469369ffb3b51051ab4e73c5fea5a39cae357
-size 1842
+package e106.emissary_backend.global.config;
+
+import e106.emissary_backend.domain.user.dto.CustomUserDetails;
+import e106.emissary_backend.domain.user.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+
+@Configuration
+@RequiredArgsConstructor
+public class ApplicationConfig {
+    private final UserRepository userRepository;
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return (email -> {
+            return userRepository.findByEmail(email)
+                    .map(CustomUserDetails::new)
+                    .orElseThrow(()-> new UsernameNotFoundException("User not found"));
+        });
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService());
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
+    }
+
+
+}

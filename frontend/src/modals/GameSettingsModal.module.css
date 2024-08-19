@@ -1,3 +1,117 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d9071bac82604c18572946e5ecf96c7871a5e25db98fe504ba9d88ddd11dc1a
-size 2521
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* 배경을 더욱 어둡게 조정 */
+    display: flex;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 630px;
+    height: 420px;
+    border: 1px solid black;
+    border-radius: 20px;
+    /* background: rgba(34, 15, 15, 0.5); */
+    /* background: rgba(0, 0, 0, 0.7); */
+    background: #12151D;
+    color: white;
+    z-index: 200;
+    /* 추가함 */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modalContent {
+    background: #12151D;
+    padding: 20px 30px 40px 30px;
+    /* border: 1px solid white; */
+    border: 3px solid #1E2940;
+    border-radius: 10px;
+    /* 모서리를 둥글게 */
+    width: 500px;
+    /* 너비 조정 */
+    max-width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 그림자 추가 */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* 요소 사이 간격 추가 */
+    margin: 15px 50px 0 50px;
+}
+
+/* 추기힘 */
+.box {
+    background: #12151D;
+    border: 3px solid #1E2940;
+    border-radius: 20px;
+    width: 630px;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* width: 100px; */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    /* background: #12151D; */
+}
+
+.rowStyle {
+    display: flex;
+    width: 500px;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.btnBox {
+    position: absolute;
+    align-self: center;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #091a14;
+    border: 1.8px solid #014015;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    /* color: rgba(255, 255, 255, 0.9); */
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* border: 2px solid rgba(200, 200, 200, 0.2); */
+    /* padding: 5px 10px; */
+    /* border-radius: 10px; */
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    left: 120%;
+    width: 110px;
+}

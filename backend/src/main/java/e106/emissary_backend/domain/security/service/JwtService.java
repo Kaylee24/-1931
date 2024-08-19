@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d042df896f1e110966c22f8b1eea1b2d61ec029160d5fb4afe87612192b7544
-size 1188
+package e106.emissary_backend.domain.security.service;
+
+import e106.emissary_backend.domain.security.entity.Access;
+import e106.emissary_backend.domain.security.entity.Refresh;
+import e106.emissary_backend.domain.security.repository.AccessRepository;
+import e106.emissary_backend.domain.security.repository.RefreshRepository;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class JwtService {
+    private final RefreshRepository refreshRepository;
+    private final AccessRepository  accessRepository;
+
+    public Optional<Refresh> findByRefresh(String refresh) {
+        return refreshRepository.findByRefresh(refresh);
+    }
+
+    public Optional<Access> findByAccess(String access) {
+        return accessRepository.findByAccess(access);
+    }
+
+    @Transactional
+    public void deleteByRefresh(String refresh){
+        refreshRepository.deleteByRefresh(refresh);
+    }
+
+    @Transactional
+    public void deleteByAccess(String access){
+        accessRepository.deleteByAccess(access);
+    }
+}
